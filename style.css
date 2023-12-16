@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding:0;
+    height: 100vh; /* height is 100% of the project */
+    background-color: black;
+    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 20px;
+}
+
+.cubeContainer {
+    perspective: 1000px;
+}
+
+.cubeContainer .cube {
+    width: 400px;
+    height: 400px;
+    margin: 12% auto 0; /* Default margin for larger screens */
+    transform-style: preserve-3d;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 767px) {
+    .cubeContainer .cube {
+        margin: 30% auto 0; /* Adjusted margin for smaller screens */
+    }
+}
+
+
+.cubeContainer .cube-face {
+width: 400px;
+height: 400px;
+background: rgb(4, 4, 4);
+font-size: 40px;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+backface-visibility: hidden;
+}
+
+.cubeContainer .front {
+    background-color: rgb(40, 40, 40);
+    transform: translateZ(200px);
+}
+
+.cubeContainer .back {
+    background-color: rgb(40, 40, 40);
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+.cubeContainer .left {
+    background-color: rgb(35, 35, 35);
+    transform: rotateY(-90deg) translateZ(200px)
+
+}
+
+.cubeContainer .right {
+    background-color: rgb(35, 35, 35);
+    transform: rotateY(90deg) translateZ(200px)
+}
+
+.cubeContainer .top {
+    background-color: rgb(30, 30, 30);
+    transform: rotateX(90deg) translateZ(200px)
+}
+
+.cubeContainer .bottom {
+    background-color: rgb(30, 30, 30);
+    transform: rotateX(-90deg) translateZ(200px)
+}
+
