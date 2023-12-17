@@ -26,8 +26,8 @@ const handleClick = () => {
     isRotating = !isRotating;
 };
 
-window.addEventListener("mousemove", handleMouseMove);
-cube.addEventListener("click", handleClick);
+const toggleButton = document.getElementById("toggleButton");
+toggleButton.addEventListener("click", handleClick);
 
 // Automatic rotation
 rotationInterval = setInterval(() => {
@@ -38,3 +38,4 @@ rotationInterval = setInterval(() => {
 
 // https://www.youtube.com/watch?v=nJRtKf6NWSY
 // https://www.youtube.com/watch?v=ijFOmcsFeXo
+
