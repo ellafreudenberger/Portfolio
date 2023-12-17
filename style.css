@@ -60,11 +60,20 @@ transition: transform 0.5s ease-in-out;
     z-index: 1;
     transform-origin: left center; /* Set the transform origin to the left center */
     transform: rotateY(0deg); 
-    transition: transform 1s ease-in-out;
+    transition: transform 2s ease-in-out;
+}
+
+#doorFont {
+    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .cubeContainer .front:hover .door {
-    transform: rotateY(-80deg) skewY(10deg); /* skew on hover so door slants */
+    transform: rotateY(90deg) skewY(0deg); /* skew on hover so door slants */
 }
 
 .cubeContainer .front .doorB {
