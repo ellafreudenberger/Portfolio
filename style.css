@@ -46,6 +46,7 @@ transition: transform 0.5s ease-in-out;
 .cubeContainer .front {
     background-color: rgb(40, 40, 40);
     background-size: 115px 115px;
+    border: 0.5px solid white;
     background-image: linear-gradient(45deg, rgb(25, 25, 25) 25%, transparent 25%), linear-gradient(-45deg, rgb(25, 25, 25) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgb(25, 25, 25) 75%), linear-gradient(-45deg, transparent 75%, rgb(25, 25, 25) 75%);
     transform: translateZ(175px) rotateX(0deg) rotateY(0deg);
 }
@@ -91,6 +92,7 @@ transition: transform 0.5s ease-in-out;
     background-color: rgb(40, 40, 40);
     transform: rotateY(180deg) translateZ(175px);
     background-size: 115px 115px;
+    border: 0.5px solid white;
     background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%);
 }
 
@@ -98,6 +100,7 @@ transition: transform 0.5s ease-in-out;
     transform: rotateY(-90deg) translateZ(175px);
     background: rgb(35, 35, 35);
     background-size: 115px 115px;
+    border: 0.5px solid white;
     background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%);
 }
 
@@ -105,20 +108,21 @@ transition: transform 0.5s ease-in-out;
     transform: rotateY(90deg) translateZ(175px);
     background: rgb(35, 35, 35);
     background-size: 115px 115px;
+    border: 0.5px solid white;
     background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%);
 }
 
 .cubeContainer .top {
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(15, 14, 14);
+    border: 0.5px solid white;
     transform: rotateX(90deg) translateZ(175px);
-    background-size: 115px 115px;
-    background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%);
 }
 
 .cubeContainer .bottom {
     transform: rotateX(-90deg) translateZ(175px);
     background: rgb(30, 30, 30);
     background-size: 115px 115px;
+    border: 0.5px solid white;
     background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%);
 }
 
