@@ -1,28 +1,27 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
-    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgb(61, 61, 61);
+    background-color: #000000;
+    /* background: rgb(61, 61, 61);
     background-size: 115px 115px;
-    background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%);
+    background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%); */
 } 
-
-.cubeContainer {
-    margin-top: -140px; /* Adjust the value to move the cube's position*/
-}
 
 .cubeContainer .cube {
     width: 350px;
     height: 350px;
     margin: auto;
     transform-style: preserve-3d;
+}
+
+.cubeContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .cubeContainer .cube-face {
@@ -39,54 +38,13 @@ backface-visibility: hidden;
 transition: transform 0.5s ease-in-out;
 }
 
-.cubeContainer {
-    position: relative;
-}
-
 .cubeContainer .front {
     background-color: rgb(40, 40, 40);
     background-size: 115px 115px;
     border: 0.5px solid white;
-    background-image: linear-gradient(45deg, rgb(25, 25, 25) 25%, transparent 25%), linear-gradient(-45deg, rgb(25, 25, 25) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgb(25, 25, 25) 75%), linear-gradient(-45deg, transparent 75%, rgb(25, 25, 25) 75%);
+    background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%);
     transform: translateZ(175px) rotateX(0deg) rotateY(0deg);
 }
-
-.cubeContainer .front .door {
-    position: absolute;
-    width: 117px;
-    height: 232px;
-    margin-left: -5px;
-    margin-top: -5px;
-    background-color: #0e0e0e;
-    z-index: 1;
-    transform-origin: left center; /* Set the transform origin to the left center */
-    transform: rotateY(0deg); 
-    transition: transform 2s ease-in-out;
-}
-
-#doorFont {
-    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 15px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.cubeContainer .front:hover .door {
-    transform: rotateY(90deg) skewY(0deg); /* skew on hover so door slants */
-}
-
-.cubeContainer .front .doorB {
-    position: absolute;
-    width: 117px;
-    height: 232px;
-    margin-left: -5px;
-    margin-top: -5px;
-    background-color: #000000;
-    z-index: 0;
-}
-
 
 .cubeContainer .back {
     background-color: rgb(40, 40, 40);
@@ -113,10 +71,13 @@ transition: transform 0.5s ease-in-out;
 }
 
 .cubeContainer .top {
-    background-color: rgb(15, 14, 14);
-    border: 0.5px solid white;
+    background-color: rgb(30, 30, 30);
     transform: rotateX(90deg) translateZ(175px);
+    background-size: 115px 115px;
+    border: 0.5px solid white;
+    background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%);
 }
+
 
 .cubeContainer .bottom {
     transform: rotateX(-90deg) translateZ(175px);
@@ -126,32 +87,11 @@ transition: transform 0.5s ease-in-out;
     background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%);
 }
 
-h1 {
-    margin-bottom: 190px;
-}
-
-#toggleButton {
-        position: absolute;
-        top: 90px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 10px 10px;
-        font-size: 13px;
-        font-weight: 800;
-        font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
-        background-color: rgb(255, 255, 255); 
-        border-radius: 3px;
-        color: #000000; 
-        border: none;
-        cursor: pointer;
-}
-
 .cubeContainer .cube-face {
     width: 100%;
     height: 100%;
     position: absolute;
 }
-
 
 /* Bottom Cube Face Image sizing */
 
@@ -173,10 +113,174 @@ h1 {
 .cubeImageGridH { top: 38%; left: 70.5%; background-image: url("/website-images/Bookings.jpeg"); }
 .cubeImageGridI { top: 5.6%; left: 70.3%; background-image: url("/website-images/Calendar.jpeg"); }
 
-
-
 .cubeImageGrid[data-image] {
     background-size: cover;
     background-position: center;
     transform: rotate(45deg);
 }
+
+/* Left Cube Face Image sizing */
+
+.cubeImageGridLeft {
+    width: 22.85%; 
+    height: 22.7%;
+    position:absolute
+}
+
+/* Left Cube Face Image Placement */
+
+.cubeImageGridLeftA { top: 5.2%; left: 5%; background-image: url("/website-images/HomePageA.jpeg"); }
+.cubeImageGridLeftB { top: 5.1%; left: 38%; background-image: url("/website-images/HomePageB.jpeg"); }
+.cubeImageGridLeftC { top: 38%; left: 5%; background-image: url("/website-images/AboutUs.jpeg"); }
+.cubeImageGridLeftD { top: 37.9%; left: 37.9%; background-image: url("/website-images/UserRegistration.jpeg"); }
+.cubeImageGridLeftE { top: 70.9%; left: 5%; background-image: url("/website-images/UserLogin.jpeg"); }
+.cubeImageGridLeftF { top: 70.9%; left: 37.8%; background-image: url("/website-images/PictureCarousel.jpeg"); }
+.cubeImageGridLeftG { top: 71%; left: 70.6%; background-image: url("/website-images/AdminLogin.jpeg"); }
+.cubeImageGridLeftH { top: 38%; left: 70.5%; background-image: url("/website-images/Bookings.jpeg"); }
+.cubeImageGridLeftI { top: 5.6%; left: 70.3%; background-image: url("/website-images/Calendar.jpeg"); }
+
+.cubeImageGridLeft[data-image] {
+    background-size: cover;
+    background-position: center;
+    transform: rotate(45deg);
+}
+
+/* Right Cube Face Image sizing */
+
+.cubeImageGridRight {
+    width: 22.85%; 
+    height: 22.7%;
+    position: absolute;
+}
+
+/* Right Cube Face Image Placement */
+
+.cubeImageGridRightA { top: 5.2%; left: 5%; background-image: url("/website-images/HomePageA.jpeg"); }
+.cubeImageGridRightB { top: 5.1%; left: 38%; background-image: url("/website-images/HomePageB.jpeg"); }
+.cubeImageGridRightC { top: 38%; left: 5%; background-image: url("/website-images/AboutUs.jpeg"); }
+.cubeImageGridRightD { top: 37.9%; left: 37.9%; background-image: url("/website-images/UserRegistration.jpeg"); }
+.cubeImageGridRightE { top: 70.9%; left: 5%; background-image: url("/website-images/UserLogin.jpeg"); }
+.cubeImageGridRightF { top: 70.9%; left: 37.8%; background-image: url("/website-images/PictureCarousel.jpeg"); }
+.cubeImageGridRightG { top: 71%; left: 70.6%; background-image: url("/website-images/AdminLogin.jpeg"); }
+.cubeImageGridRightH { top: 38%; left: 70.5%; background-image: url("/website-images/Bookings.jpeg"); }
+.cubeImageGridRightI { top: 5.6%; left: 70.3%; background-image: url("/website-images/Calendar.jpeg"); }
+
+.cubeImageGridRight[data-image] {
+    background-size: cover;
+    background-position: center;
+    transform: rotate(45deg);
+}
+
+/* Back Cube Face Image sizing */
+
+.cubeImageGridBack {
+    width: 22.85%; 
+    height: 22.7%;
+    position:absolute
+}
+
+/* Back Cube Face Image Placement */
+
+.cubeImageGridBackA { top: 5.2%; left: 5%; background-image: url("/website-images/HomePageA.jpeg"); }
+.cubeImageGridBackB { top: 5.1%; left: 38%; background-image: url("/website-images/HomePageB.jpeg"); }
+.cubeImageGridBackC { top: 38%; left: 5%; background-image: url("/website-images/AboutUs.jpeg"); }
+.cubeImageGridBackD { top: 37.9%; left: 37.9%; background-image: url("/website-images/UserRegistration.jpeg"); }
+.cubeImageGridBackE { top: 70.9%; left: 5%; background-image: url("/website-images/UserLogin.jpeg"); }
+.cubeImageGridBackF { top: 70.9%; left: 37.8%; background-image: url("/website-images/PictureCarousel.jpeg"); }
+.cubeImageGridBackG { top: 71%; left: 70.6%; background-image: url("/website-images/AdminLogin.jpeg"); }
+.cubeImageGridBackH { top: 38%; left: 70.5%; background-image: url("/website-images/Bookings.jpeg"); }
+.cubeImageGridBackI { top: 5.6%; left: 70.3%; background-image: url("/website-images/Calendar.jpeg"); }
+
+.cubeImageGridBack[data-image] {
+    background-size: cover;
+    background-position: center;
+    transform: rotate(45deg);
+}
+
+/* Front Cube Face Image sizing */
+
+.cubeImageGridFront {
+    width: 22.85%; 
+    height: 22.7%;
+    position:absolute
+}
+
+/* Front Cube Face Image Placement */
+
+.cubeImageGridFrontA { top: 5.2%; left: 5%; background-image: url("/website-images/HomePageA.jpeg"); }
+.cubeImageGridFrontB { top: 5.1%; left: 38%; background-image: url("/website-images/HomePageB.jpeg"); }
+.cubeImageGridFrontC { top: 38%; left: 5%; background-image: url("/website-images/AboutUs.jpeg"); }
+.cubeImageGridFrontD { top: 37.9%; left: 37.9%; background-image: url("/website-images/UserRegistration.jpeg"); }
+.cubeImageGridFrontE { top: 70.9%; left: 5%; background-image: url("/website-images/UserLogin.jpeg"); }
+.cubeImageGridFrontF { top: 70.9%; left: 37.8%; background-image: url("/website-images/PictureCarousel.jpeg"); }
+.cubeImageGridFrontG { top: 71%; left: 70.6%; background-image: url("/website-images/AdminLogin.jpeg"); }
+.cubeImageGridFrontH { top: 38%; left: 70.5%; background-image: url("/website-images/Bookings.jpeg"); }
+.cubeImageGridFrontI { top: 5.6%; left: 70.3%; background-image: url("/website-images/Calendar.jpeg"); }
+
+.cubeImageGridFront[data-image] {
+    background-size: cover;
+    background-position: center;
+    transform: rotate(45deg);
+}
+
+/* Top Cube Face Image Sizing */
+
+.cubeImageGridTop {
+    width: 22.85%; 
+    height: 22.7%;
+    position:absolute
+}
+
+/* Top Cube Face Image Placement */
+
+.cubeImageGridTopA { top: 5.2%; left: 5%; background-image: url("/website-images/HomePageA.jpeg"); }
+.cubeImageGridTopB { top: 5.1%; left: 38%; background-image: url("/website-images/HomePageB.jpeg"); }
+.cubeImageGridTopC { top: 38%; left: 5%; background-image: url("/website-images/AboutUs.jpeg"); }
+.cubeImageGridTopD { top: 37.9%; left: 37.9%; background-image: url("/website-images/UserRegistration.jpeg"); }
+.cubeImageGridTopE { top: 70.9%; left: 5%; background-image: url("/website-images/UserLogin.jpeg"); }
+.cubeImageGridTopF { top: 70.9%; left: 37.8%; background-image: url("/website-images/PictureCarousel.jpeg"); }
+.cubeImageGridTopG { top: 71%; left: 70.6%; background-image: url("/website-images/AdminLogin.jpeg"); }
+.cubeImageGridTopH { top: 38%; left: 70.5%; background-image: url("/website-images/Bookings.jpeg"); }
+.cubeImageGridTopI { top: 5.6%; left: 70.3%; background-image: url("/website-images/Calendar.jpeg"); }
+
+.cubeImageGridTop[data-image] {
+    background-size: cover;
+    background-position: center;
+    transform: rotate(45deg);
+}
+
+/* Glow Effect */
+
+/* Cube Faces */
+
+.cubeContainer .cube-face {
+    width: 350px;
+    height: 350px;
+    margin: auto;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 100px rgba(255, 255, 255, 0.5); 
+}
+
+/* Individual Cube Faces */
+
+.cubeContainer .front,
+.cubeContainer .back,
+.cubeContainer .left,
+.cubeContainer .right,
+.cubeContainer .top,
+.cubeContainer .bottom {
+    box-shadow: 0 0 10000000px rgba(255, 255, 255, 0.5); 
+}
+
+/* Cube Images */
+
+.cubeImageGrid,
+.cubeImageGridLeft,
+.cubeImageGridRight, 
+.cubeImageGridFront,
+.cubeImageGridBack,
+.cubeImageGridTop {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); 
+}
+
+
