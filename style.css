@@ -1,10 +1,8 @@
 body {
-    margin: 0;
+    margin-right: 20%;
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: #000000;
+    overflow: hidden;
     /* background: rgb(61, 61, 61);
     background-size: 115px 115px;
     background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%); */
@@ -15,13 +13,50 @@ body {
     height: 350px;
     margin: auto;
     transform-style: preserve-3d;
+    animation: cubeRolling 4s linear forwards, zoomInAnimation 10s 4s ease-in-out forwards;
+}
+
+
+@keyframes cubeRolling {
+    0% {
+        transform: translate(-150px) rotateX(0deg) rotateY(0deg);
+    }
+    50% {
+        transform: translate(0) rotateX(35deg) rotateY(180deg);
+    }
+    100% {
+        transform: translate(150px) rotateX(70deg) rotateY(360deg);
+    }
+}
+
+@keyframes zoomInAnimation {
+    0% {
+        transform: translateX(150px) translateX(0) scale(1);
+    }
+    10% {
+        transform: translateX(150px) translateX(7deg) scale(5);
+    }
+    25% {
+        transform-origin: 35% 35%;
+        transform: translateX(150px) rotateZ(25deg) scale(20);
+    }
+    50% {
+        transform-origin: 35% 35%;
+        transform: translateX(150px) rotateZ(50deg) scale(30);
+    }
+    75% {
+        transform-origin: 35% 35%;
+        transform: translateX(150px) rotateZ(75deg) scale(35);
+    }
+    100% {
+        transform-origin: 35% 35%;
+        transform: translateX(150px) rotateZ(100deg) scale(30);
+    }
 }
 
 .cubeContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    top: 150px;
 }
 
 .cubeContainer .cube-face {
@@ -31,11 +66,8 @@ background: rgb(4, 4, 4);
 font-size: 40px;
 color: white;
 display: flex;
-align-items: center;
-justify-content: center;
-position: absolute;
+align-items: flex-start;
 backface-visibility: hidden;
-transition: transform 0.5s ease-in-out;
 }
 
 .cubeContainer .front {
@@ -269,7 +301,7 @@ transition: transform 0.5s ease-in-out;
 .cubeContainer .right,
 .cubeContainer .top,
 .cubeContainer .bottom {
-    box-shadow: 0 0 10000000px rgba(255, 255, 255, 0.5); 
+    box-shadow: 0 0 1000px rgba(255, 255, 255, 0.5); 
 }
 
 /* Cube Images */
@@ -280,7 +312,7 @@ transition: transform 0.5s ease-in-out;
 .cubeImageGridFront,
 .cubeImageGridBack,
 .cubeImageGridTop {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7); 
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); 
 }
 
 
