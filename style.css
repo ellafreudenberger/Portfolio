@@ -19,38 +19,39 @@ body {
 
 @keyframes cubeRolling {
     0% {
-        transform: translate(-150px) rotateX(0deg) rotateY(0deg);
+        transform: translate(-10px, -10px) rotateX(0deg) rotateY(0deg);
     }
     50% {
-        transform: translate(0) rotateX(35deg) rotateY(180deg);
+        transform: translate(0, 200px) rotateX(35deg) rotateY(180deg);
+    }
+    95% {
+        transform: translate(150px, 10px) rotateX(70deg) rotateY(359deg);
     }
     100% {
-        transform: translate(150px) rotateX(70deg) rotateY(360deg);
+        transform: translate(150px, 10px) rotateX(70deg) rotateY(360deg);
     }
 }
 
 @keyframes zoomInAnimation {
     0% {
-        transform: translateX(150px) translateX(0) scale(1);
+        transform: translate(150px, 10px) translateX(0) scale(1);
     }
+
     10% {
-        transform: translateX(150px) translateX(7deg) scale(5);
+        transform: translate(150px, 10px) translateX(7deg) scale(2);
     }
     25% {
         transform-origin: 35% 35%;
-        transform: translateX(150px) rotateZ(25deg) scale(20);
+        transform: translate(150px, 10px) rotateZ(25deg) scale(20);
     }
     50% {
         transform-origin: 35% 35%;
-        transform: translateX(150px) rotateZ(50deg) scale(30);
+        transform: translate(150px, 10px) rotateZ(50deg) scale(30);
     }
-    75% {
-        transform-origin: 35% 35%;
-        transform: translateX(150px) rotateZ(75deg) scale(35);
-    }
+
     100% {
         transform-origin: 35% 35%;
-        transform: translateX(150px) rotateZ(100deg) scale(30);
+        transform: translate(150px, 10px) rotateZ(100deg) scale(30);
     }
 }
 
