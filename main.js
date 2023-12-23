@@ -4,17 +4,52 @@ function addNewFeatures() {
     const navBar = document.createElement('nav');
     navBar.innerHTML = `
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     `;
 
     navBar.style.opacity = 0;
-    navBar.style.transition = 'opacity 7s';
+    navBar.style.transition = 'opacity 4s';
+
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            const targetPage = this.getAttribute('href').substring(1);
+            navigateTo(targetPage);
+        });
+    });
 
     // Append navigation bar to the black screen with a delay
     document.getElementById('blackScreen').appendChild(navBar);
+
+    function navigateTo(page) {
+        // Handle navigation logic here
+        // You can load content dynamically based on the page parameter
+    
+        // For example, load different content based on the page
+        switch (page) {
+            case 'home':
+                loadContent('<h2>Home Page Content</h2>');
+                break;
+            case 'about':
+                loadContent('<h2>About Page Content</h2>');
+                break;
+            case 'contact':
+                loadContent('<h2>Contact Page Content</h2>');
+                break;
+            default:
+                break;
+        }
+    }
+    
+    // Function to load content into the app container
+    function loadContent(content) {
+        const appContainer = document.getElementById('app');
+        appContainer.innerHTML = content;
+    }
 
     // Add horizontal line
     const horizontalLine = document.createElement('div');
@@ -56,7 +91,7 @@ function addNewFeatures() {
         // Apply the fade-in effect for the lines
         horizontalLine.style.opacity = 1;
         otherHorizontalLine.style.opacity = 1;
-    }, 1500);
+    }, 1600);
 
     // Apply the fade-in effect for the navigation bar
     setTimeout(() => {

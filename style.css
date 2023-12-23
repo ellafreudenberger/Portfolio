@@ -7,7 +7,7 @@ body {
     padding: 0;
     background-color: #000000;
     overflow: hidden;
-    /* background: rgb(61, 61, 61);
+   /* background: rgb(61, 61, 61);
     background-size: 115px 115px;
     background-image: linear-gradient(45deg, black 25%, transparent 25%), linear-gradient(-45deg, black 25%, transparent 25%), linear-gradient(45deg, transparent 75%, black 75%), linear-gradient(-45deg, transparent 75%, black 75%); */
 } 
@@ -27,9 +27,6 @@ body {
     }
     50% {
         transform: translate(0, 200px) rotateX(35deg) rotateY(180deg);
-    }
-    95% {
-        transform: translate(150px, 10px) rotateX(70deg) rotateY(359deg);
     }
     100% {
         transform: translate(150px, 10px) rotateX(70deg) rotateY(360deg);
@@ -58,12 +55,11 @@ body {
     
     50%, 100% {
         transform-origin: 35% 35%;
-        transform: translate(150px, 10px) rotateZ(100deg) scale(30);
+        transform: translate(150px, 10px) rotateZ(100deg) scale(200);
         animation-duration: 1s;
     }
 }
 
-    
 
 .cubeContainer {
     position: relative;
@@ -334,7 +330,7 @@ nav {
     transform: translate(-50%, -50%);
     z-index: 1001; /* Make sure the navigation bar is above the black screen */
     border: 2px solid white; 
-    padding: 122px 26px;
+    padding: 150px 43px;
     background-color: #000000;
     font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 15px;
@@ -343,12 +339,12 @@ nav {
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 15px;
+    display: flex; 
 }
 
 nav li {
-    display: inline;
-    padding: 10px; 
+    padding: 0 15px; 
 }
 
 nav a {
