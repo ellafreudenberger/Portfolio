@@ -55,8 +55,8 @@ function addNewFeatures() {
     const horizontalLine = document.createElement('div');
     horizontalLine.className = 'horizontal-line'; 
     horizontalLine.style.width = '200%';
-    horizontalLine.style.height = '2px';
-    horizontalLine.style.backgroundColor = 'white';
+    horizontalLine.style.height = '1px';
+    horizontalLine.style.backgroundColor = 'rgb(45, 45, 45)';
     horizontalLine.style.position = 'fixed';
     horizontalLine.style.top = '50%';
     horizontalLine.style.left = '50%';
@@ -69,8 +69,8 @@ function addNewFeatures() {
     const otherHorizontalLine = document.createElement('div');
     otherHorizontalLine.className = 'other-horizontal-line'; 
     otherHorizontalLine.style.width = '200%';
-    otherHorizontalLine.style.height = '2px';
-    otherHorizontalLine.style.backgroundColor = 'white';
+    otherHorizontalLine.style.height = '1px';
+    otherHorizontalLine.style.backgroundColor = 'rgb(45, 45, 45)';
     otherHorizontalLine.style.position = 'fixed';
     otherHorizontalLine.style.top = '50%';
     otherHorizontalLine.style.left = '50%';

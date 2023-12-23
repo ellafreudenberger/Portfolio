@@ -400,11 +400,11 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1001; /* Make sure the navigation bar is above the black screen */
-    border: 2px solid white; 
-    padding: 150px 43px;
+    border: 2px solid rgb(41, 40, 40); 
+    padding: 192px 43px;
     background-color: #000000;
     font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 25px;
 }
 
 nav ul {
@@ -420,7 +420,7 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: white;
+    color: rgb(18, 18, 18); /* make this go from black to white slowly */
 }
 
 
