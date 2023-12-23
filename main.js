@@ -11,7 +11,7 @@ function addNewFeatures() {
     `;
 
     navBar.style.opacity = 0;
-    navBar.style.transition = 'opacity 6s';
+    navBar.style.transition = 'opacity 4s';
 
     const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
@@ -91,7 +91,7 @@ function addNewFeatures() {
         // Apply the fade-in effect for the lines
         horizontalLine.style.opacity = 1;
         otherHorizontalLine.style.opacity = 1;
-    }, 2000);
+    }, 1500);
 
     // Apply the fade-in effect for the navigation bar
     setTimeout(() => {
@@ -109,7 +109,7 @@ setTimeout(() => {
     blackScreen.style.position = 'fixed';
     blackScreen.style.top = '0';
     blackScreen.style.left = '0%';
-    blackScreen.style.width = '100%';
+    blackScreen.style.width = '200%';
     blackScreen.style.height = '100%';
     blackScreen.style.backgroundColor = '#000';
     blackScreen.style.zIndex = '1000'; // Adjust the z-index as needed
@@ -119,4 +119,4 @@ setTimeout(() => {
 
     // Call the function to add new features
     addNewFeatures();
-}, 7000); // Adjust the duration as needed (in milliseconds)
+}, 5500); // Adjust the duration as needed (in milliseconds)

@@ -12,12 +12,83 @@ body {
     background-image: linear-gradient(45deg,  rgba(25, 25, 25, 0.9) 25%, transparent 25%), linear-gradient(-45deg, rgba(25, 25, 25, 0.8) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, rgba(25, 25, 25, 0.8) 75%), linear-gradient(-45deg, transparent 75%, rgba(25, 25, 25, 0.8) 75%); 
 } 
 
+.cube {
+    /* Your existing styles for the cube */
+    z-index: 2; /* Set a higher z-index for the cube */
+}
+
+.name {
+    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the container */
+    position: absolute;
+    top: 10px; /* Adjust the top value to leave space for the cube */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    color: white;
+    opacity: 0.7; 
+    white-space: nowrap; /* Prevent line break */
+    z-index: -1; 
+}
+
+.otherName {
+    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 180px;
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    writing-mode: vertical-rl;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    top: 190px; /* Adjust the top value to position it vertically on the top */
+    left: -120px; /* Adjust the left value to position it horizontally on the left */
+    color: white;
+    opacity: 0.7; /* Set the desired opacity (0 to 1) */
+    z-index: -1; /* Set a lower z-index for the .otherName element */
+    white-space: nowrap; /* Prevent line break */
+    transform: rotate(180deg);
+}
+.otherMatrix {
+    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    writing-mode: vertical-rl;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: absolute;
+    top: 140px; /* Adjust the top value to position it vertically on the top */
+    right: 10px; /* Adjust the left value to position it horizontally on the left */
+    color: white;
+    opacity: 0.7; /* Set the desired opacity (0 to 1) */
+    z-index: -1; /* Set a lower z-index for the .otherName element */
+    white-space: nowrap; /* Prevent line break */
+    }
+
+.matrix {
+    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align to the top of the container */
+    position: absolute;
+    bottom: 10px; /* Adjust the top value to leave space for the cube */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    color: white;
+    opacity: 0.7; 
+    white-space: nowrap; /* Prevent line break */
+    z-index: -1; 
+}
+
 .cubeContainer .cube {
     width: 350px;
     height: 350px;
     margin: auto;
     transform-style: preserve-3d;
-    animation: cubeRolling 4s linear forwards, zoomInAnimation 10s 4s ease-in-out;
+    animation: cubeRolling 4s linear forwards, zoomInAnimation 9.5s 4s ease-in-out;
 }
 
 
@@ -307,7 +378,7 @@ backface-visibility: hidden;
 .cubeContainer .right,
 .cubeContainer .top,
 .cubeContainer .bottom {
-    box-shadow: 0 0 1000px rgba(255, 255, 255, 0.5); 
+    box-shadow: 0 0 800px rgba(255, 255, 255, 0.5); 
 }
 
 /* Cube Images */
