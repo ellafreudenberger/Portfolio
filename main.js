@@ -1,84 +1,66 @@
+// Add new features to the webpage
+function addNewFeatures() {
+    // Add navigation bar
+    const navBar = document.createElement('nav');
+    navBar.innerHTML = `
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    `;
 
+    // Append navigation bar to the black screen
+    document.getElementById('blackScreen').appendChild(navBar);
 
+    // Add horizontal line
+    const horizontalLine = document.createElement('div');
+    horizontalLine.style.width = '200%';
+    horizontalLine.style.height = '1px';
+    horizontalLine.style.backgroundColor = 'white';
+    horizontalLine.style.position = 'fixed';
+    horizontalLine.style.top = '50%';
+    horizontalLine.style.left = '50%';
+    horizontalLine.style.transform = 'translate(-50%, -50%) rotate(45deg)'; // Center the line
+    horizontalLine.style.zIndex = '1000';
 
+    // Append horizontal line to the black screen
+    document.getElementById('blackScreen').appendChild(horizontalLine);
 
+    // Add other horizontal line
+    const otherHorizontalLine = document.createElement('div');
+    otherHorizontalLine.style.width = '200%';
+    otherHorizontalLine.style.height = '1px';
+    otherHorizontalLine.style.backgroundColor = 'white';
+    otherHorizontalLine.style.position = 'fixed';
+    otherHorizontalLine.style.top = '50%';
+    otherHorizontalLine.style.left = '50%';
+    otherHorizontalLine.style.transform = 'translate(-50%, -50%) rotate(-45deg)'; // Center the line
+    otherHorizontalLine.style.zIndex = '1000';
 
+    // Append other horizontal line to the black screen
+    document.getElementById('blackScreen').appendChild(otherHorizontalLine);
 
+}
 
+// Remove the cube element after the zoomInAnimation
+    setTimeout(function () {
+    document.querySelector('.cube').style.display = 'none';
 
+    // Add a black screen
+    const blackScreen = document.createElement('div');
+    blackScreen.id = 'blackScreen'; // Set an id for easy reference
+    blackScreen.style.position = 'fixed';
+    blackScreen.style.top = '0';
+    blackScreen.style.left = '50%';
+    blackScreen.style.width = '100%';
+    blackScreen.style.height = '100%';
+    blackScreen.style.backgroundColor = '#000';
+    blackScreen.style.zIndex = '1000'; // Adjust the z-index as needed
 
+    // Append black screen to the body
+    document.body.appendChild(blackScreen);
 
-
-
-
-
-
-
-
-
-
-// const cube = document.querySelector(".cube");
-// let rotateX = 0;
-// let rotateY = 0;
-// let isRotating = true;
-// let rotationInterval;
-// const rotationValue = 0.1;  // Adjust rotation sensitivity
-// const transitionDuration = 2;  // Adjust transition duration in seconds
-
-// const rotateCube = () => {
-  //  rotateX += rotationValue * 360;
-   // rotateY += rotationValue * 360;
-
-   // cube.style.transition = `transform ${transitionDuration}s ease-in-out`;
-   // cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-// }; 
-
-// const handleMouseMove = (event) => {
-   // if (isRotating) {
-      //  rotateY = (event.clientX / window.innerWidth - 0.5) * 360;
-      //  rotateX = (event.clientY / window.innerHeight - 0.5) * 360;
-     //   cube.style.transition = "none";  // Disable transition during manual rotation
-      //  cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-   // }
-// };
-
-// const handleMouseEnter = () => {
- //   document.addEventListener("mousemove", handleMouseMove);
-// };
-
-// const handleMouseLeave = () => {
-  //  document.removeEventListener("mousemove", handleMouseMove);
-// };
-
-// Commented out automatic rotation
-// const handleClick = () => {
-//     isRotating = !isRotating;
-// };
-
-// const toggleButton = document.getElementById("toggleButton");
-// toggleButton.addEventListener("click", handleClick);
-
-// Commented out automatic rotation
- // cube.addEventListener("mouseenter", handleMouseEnter);
-// cube.addEventListener("mouseleave", handleMouseLeave);
-
-// Automatic rotation
-// rotationInterval = setInterval(() => {
-//     if (isRotating) {
-//         rotateCube();
-//     }
-// }, 800);  // Adjust the interval for smoother animation
-
-// document.addEventListener("DOMContentLoaded", function () {
-   // const cubesWithImages = document.querySelectorAll(".cubeImageGrid[data-image]");
-
-   // cubesWithImages.forEach(cube => {
-       // const imageUrl = cube.dataset.image;
-      //  if (imageUrl) {
-        //    cube.style.setProperty('--image-url', `url(${imageUrl})`);
-      //  }
-  //  });
-// });
-
-// https://www.youtube.com/watch?v=nJRtKf6NWSY
-// https://www.youtube.com/watch?v=ijFOmcsFeXo
+    // Call the function to add new features
+    addNewFeatures();
+}, 7000); // Adjust the duration as needed (in milliseconds)

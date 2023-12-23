@@ -1,3 +1,7 @@
+/* https://www.youtube.com/watch?v=nJRtKf6NWSY */
+/* https://www.youtube.com/watch?v=ijFOmcsFeXo */
+
+
 body {
     margin-right: 20%;
     padding: 0;
@@ -13,7 +17,7 @@ body {
     height: 350px;
     margin: auto;
     transform-style: preserve-3d;
-    animation: cubeRolling 4s linear forwards, zoomInAnimation 10s 4s ease-in-out forwards;
+    animation: cubeRolling 4s linear forwards, zoomInAnimation 10s 4s ease-in-out;
 }
 
 
@@ -33,27 +37,33 @@ body {
 }
 
 @keyframes zoomInAnimation {
+    0%, 10% {
+        animation-timing-function: ease-in-out;
+    }
+
     0% {
         transform: translate(150px, 10px) translateX(0) scale(1);
+        animation-duration: 9s; 
     }
 
     10% {
         transform: translate(150px, 10px) translateX(7deg) scale(2);
+        animation-duration: 1s; 
     }
+
     25% {
         transform-origin: 35% 35%;
         transform: translate(150px, 10px) rotateZ(25deg) scale(20);
     }
-    50% {
-        transform-origin: 35% 35%;
-        transform: translate(150px, 10px) rotateZ(50deg) scale(30);
-    }
-
-    100% {
+    
+    50%, 100% {
         transform-origin: 35% 35%;
         transform: translate(150px, 10px) rotateZ(100deg) scale(30);
+        animation-duration: 1s;
     }
 }
+
+    
 
 .cubeContainer {
     position: relative;
@@ -64,7 +74,6 @@ body {
 width: 350px;
 height: 350px;
 background: rgb(4, 4, 4);
-font-size: 40px;
 color: white;
 display: flex;
 align-items: flex-start;
@@ -315,5 +324,38 @@ backface-visibility: hidden;
 .cubeImageGridTop {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); 
 }
+
+
+/* Styles for the navigation bar */
+nav {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Make sure the navigation bar is above the black screen */
+    border: 1px solid white; 
+    padding: 122px 30px;
+    background-color: #000000;
+    font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    padding: 10px; 
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+
 
 
