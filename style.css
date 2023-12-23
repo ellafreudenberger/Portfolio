@@ -333,8 +333,8 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1001; /* Make sure the navigation bar is above the black screen */
-    border: 1px solid white; 
-    padding: 122px 30px;
+    border: 2px solid white; 
+    padding: 122px 26px;
     background-color: #000000;
     font-family: Futura, "Helvetica Neue", Helvetica, sans-serif;
     font-size: 15px;

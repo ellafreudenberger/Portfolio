@@ -1,50 +1,71 @@
-// Add new features to the webpage
+// Function to add new features to the webpage
 function addNewFeatures() {
     // Add navigation bar
     const navBar = document.createElement('nav');
     navBar.innerHTML = `
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#about">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     `;
 
-    // Append navigation bar to the black screen
+    navBar.style.opacity = 0;
+    navBar.style.transition = 'opacity 7s';
+
+    // Append navigation bar to the black screen with a delay
     document.getElementById('blackScreen').appendChild(navBar);
 
     // Add horizontal line
     const horizontalLine = document.createElement('div');
+    horizontalLine.className = 'horizontal-line'; 
     horizontalLine.style.width = '200%';
-    horizontalLine.style.height = '1px';
+    horizontalLine.style.height = '2px';
     horizontalLine.style.backgroundColor = 'white';
     horizontalLine.style.position = 'fixed';
     horizontalLine.style.top = '50%';
     horizontalLine.style.left = '50%';
-    horizontalLine.style.transform = 'translate(-50%, -50%) rotate(45deg)'; // Center the line
+    horizontalLine.style.transform = 'translate(-50%, -50%) rotate(45deg)'; 
     horizontalLine.style.zIndex = '1000';
-
-    // Append horizontal line to the black screen
-    document.getElementById('blackScreen').appendChild(horizontalLine);
+    horizontalLine.style.opacity = 0; // Set initial opacity to 0
+    horizontalLine.style.transition = 'opacity 7s'; // Adjust duration for fade-in
 
     // Add other horizontal line
     const otherHorizontalLine = document.createElement('div');
+    otherHorizontalLine.className = 'other-horizontal-line'; 
     otherHorizontalLine.style.width = '200%';
-    otherHorizontalLine.style.height = '1px';
+    otherHorizontalLine.style.height = '2px';
     otherHorizontalLine.style.backgroundColor = 'white';
     otherHorizontalLine.style.position = 'fixed';
     otherHorizontalLine.style.top = '50%';
     otherHorizontalLine.style.left = '50%';
-    otherHorizontalLine.style.transform = 'translate(-50%, -50%) rotate(-45deg)'; // Center the line
+    otherHorizontalLine.style.transform = 'translate(-50%, -50%) rotate(-45deg)'; 
     otherHorizontalLine.style.zIndex = '1000';
+    otherHorizontalLine.style.opacity = 0; // Set initial opacity to 0
+    otherHorizontalLine.style.transition = 'opacity 7s'; // Adjust duration for fade-in
 
-    // Append other horizontal line to the black screen
-    document.getElementById('blackScreen').appendChild(otherHorizontalLine);
+    // Append lines to the black screen with a delay
+    setTimeout(() => {
+        document.getElementById('blackScreen').appendChild(horizontalLine);
+        document.getElementById('blackScreen').appendChild(otherHorizontalLine);
 
+        // Trigger reflow to apply initial styles before fading in
+        void horizontalLine.offsetWidth;
+        void otherHorizontalLine.offsetWidth;
+
+        // Apply the fade-in effect for the lines
+        horizontalLine.style.opacity = 1;
+        otherHorizontalLine.style.opacity = 1;
+    }, 1500);
+
+    // Apply the fade-in effect for the navigation bar
+    setTimeout(() => {
+        navBar.style.opacity = 1;
+    }, 10);
 }
 
 // Remove the cube element after the zoomInAnimation
-    setTimeout(function () {
+setTimeout(() => {
     document.querySelector('.cube').style.display = 'none';
 
     // Add a black screen
